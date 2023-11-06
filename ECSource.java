@@ -10,7 +10,13 @@ class Node<T> {
 
 class ECSource {
   public static <T> boolean isUnivalueList(Node<T> head) {
-    // todo
+    boolean unique = false;
+    var value = head.val;
+    while(head!=null){
+      if(head.val!=value)
+        return false;
+      head = head.next;
+    }
     return true;
   }
 
@@ -20,5 +26,23 @@ class ECSource {
 
         // Printing solution
         System.out.println((ECSource.isUnivalueList(z)));
+        Node<Integer> u = new Node<>(2);
+Node<Integer> v = new Node<>(2);
+Node<Integer> w = new Node<>(3);
+Node<Integer> x = new Node<>(3);
+Node<Integer> y = new Node<>(2);
+
+u.next = v;
+v.next = w;
+w.next = x;
+x.next = y;
+
+// 2 -> 2 -> 3 -> 3 -> 2
+
+System.out.println(ECSource.isUnivalueList(u));
+
+
+
+        
     }
 }
